@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Laura & Jhonatan</title>
+  <title>Te amo Minha Vida</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <audio id="musica" loop>
-  <source src="musica.mp3" type="audio/mpeg">
-  Seu navegador não suporta áudio.
-</audio>
+    <source src="musica.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
 
-<button onclick="document.getElementById('musica').play()">
-  ▶️ Tocar Música
-</button>
+  <button class="botao-musica" onclick="document.getElementById('musica').play()">
+    ▶️ Tocar Música
+  </button>
 
   <div class="container">
-    <h1>Laura & Jhonatan</h1>
-    <img src="foto.jpg" alt="Laura e Jhonatan" class="foto" />
+    <h1>Te amo Minha Vida/h1>
+    <img src="foto.jpg" alt="Te amo Minha Vida" class="foto" />
 
     <div class="mensagem">
       <p>
@@ -30,5 +30,20 @@
       </p>
     </div>
   </div>
+
+  <!-- Contêiner para os corações -->
+  <div id="coracoes-container"></div>
+
+  <script>
+    // Geração dos corações
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.classList.add("coracao");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 4 + Math.random() * 3 + "s";
+      document.getElementById("coracoes-container").appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }, 300);
+  </script>
 </body>
 </html>
